@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>smart phone draw</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="400" height="400">
+    canvas를 지원하지 않는 브라우저입니다!
+  </canvas>
+
+
+
+
+    <script>
+
+      var canvas = document.getElementById("myCanvas");
+      context = canvas.getContext("2d");
+
+
+      //스마트폰 몸체
+      context.beginPath();
+      context.moveTo(100,40);
+      context.quadraticCurveTo(100,20,120,20);
+      context.lineTo(280,20);
+      context.quadraticCurveTo(300,20,300,40);
+      context.lineTo(300,360);
+      context.quadraticCurveTo(300,380,280,380);
+      context.lineTo(120,380);
+      context.quadraticCurveTo(100,380,100,360);
+      context.lineTo(100,40);
+      context.fill();
+
+
+
+
+      //스피커 부분 라인
+      context.beginPath();
+      context.strokeStyle = "#e1e1e1";
+      context.lineWidth = 7;
+      context.lineCap = 'round';
+      context.moveTo(170,50);
+      context.lineTo(230,50);
+      context.stroke();
+
+      //홈 버튼
+      context.beginPath();
+      context.lineWidth = 2;
+      context.strokeStyle = "#3d3d3d";
+      context.arc(200,350,17,0,Math.PI*2,true);
+      context.stroke();
+
+      //그라이디언트
+      var linearGradient  = context.createLinearGradient(200,342,200,358);
+      linearGradient.addColorStop(0,'#999999');
+      linearGradient.addColorStop(0.4,'#525252');
+      linearGradient.addColorStop(1,'#888888');
+
+      context.fillStyle=linearGradient;
+      context.beginPath();
+      context.arc(200,350,16,0,Math.PI*2,true);
+      context.fill();
+
+
+      //액정부분
+      var img = document.createElement('img');
+      img.src = 'http://www.gakuten.jp/gakuten/wp-content/uploads/2016/03/20160317_011.png';
+      img.onload = function(){
+        var imgElem = this;
+
+        function drawTime(){
+          context.drawImage(imgElem, 110, 80, 180, 240);
+
+          //반투명 글자 배경
+          context.fillStyle = 'rgba(0, 0, 0, 0.4)';
+          context.fillRect(110, 80, 180, 60);
+
+
+          //글자 추가
+          context.font = '40px 나눔고딕';
+          context.fillStyle = 'white';
+          context.textAlign = 'center';
+          var message = '12:00';
+
+          //시계 객체 만들기
+          var  currentTime = new Date();
+          var hours = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          var seconds = currentTime.getSeconds();
+          hours = ( hours < 10 ? '0' : '' ) + hours;
+          minutes = ( minutes < 10 ? '0' : '' ) + minutes;
+          seconds = ( seconds < 10 ? '0' : '' ) + seconds;
+
+          //alert(hours +":" + minutes + ":" + seconds);
+          message = hours + ":" + minutes + ":" + seconds;
+          context.fillText(message, 200, 120);
+        }
+        //시계의 표기가 주기적으로 적용되도록
+        setInterval(drawTime, 100);
+
+
+
+      }
+
+
+    </script>
+</body>
+</html>

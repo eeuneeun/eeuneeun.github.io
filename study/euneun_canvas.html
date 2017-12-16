@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>euneun logo</title>
+  <style>
+
+    #euneun{width:500px; height:500px;}
+  </style>
+
+</head>
+<body>
+
+    <canvas id = "euneun">
+    </canvas>
+
+
+
+  <script type="text/javascript">
+      var euneun = document.getElementById("euneun");
+      context = euneun.getContext("2d");
+
+      context.beginPath();
+      context.arc(20,20,17,0,Math.PI*2,true);
+      context.stroke();
+
+
+      context.beginPath();
+      context.lineWidth = 2;
+      context.strokeStyle = "#3d3d3d";
+      context.arc(200,350,17,0,Math.PI*2,true);
+      context.stroke();
+  </script>
+</body>
+</html>
