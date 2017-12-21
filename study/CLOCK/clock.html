@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>20171221 한글시계 EUNEUN</title>
+		<style>
+			html,body,ul,li,div,.container .clock, .left, .right{width: 100%; height:100%; margin: 0; padding: 0;font-size: 30px;font-weight: bold;box-sizing: border-box;}
+      			.active_fix{color:#fff!important;}
+				.active{
+							color:#fff;
+							-webkit-animation: active_motion 60s infinite; /* Safari 4.0 - 8.0 */
+					    animation: active_motion 60s infinite;
+				}
+				@-webkit-keyframes active_motion {
+					 0%{color:#fff;}
+					 20%{color:#fff;text-shadow: 0px 0px 10px #fff;}
+					 50%{color:#fff;text-shadow: 0px 0px 15px #FF1252;}
+					 80%{color:#fff;text-shadow: 0px 0px 10px #004856;}
+					 100%{color:#fff;text-shadow: 0px 0px 15px #fff;}
+				}
+				@keyframes active_motion {
+					 0%{color:#fff;}
+					 20%{color:#fff;text-shadow: 0px 0px 10px #fff;}
+					 50%{color:#fff;text-shadow: 0px 0px 15px #FF1252;}
+					 80%{color:#fff;text-shadow: 0px 0px 10px #004856;}
+					 100%{color:#fff;text-shadow: 0px 0px 15px #fff;}
+				}
+
+      .container{width: 100%; height: 100%; background: url("bg.jpg") no-repeat center 20%; padding-top: 4%;background-size: cover;}
+        .container .clock{width: 80%;margin: 0 auto;}
+
+        .container .clock div{width: 45%; height: 0; padding-bottom: 45%; background: rgba(26, 59, 65,0.5); position: relative; box-shadow:0px 0px 15px rgba(255,255,255,0.75)}
+        .container .clock div ul{position: absolute; top: 5%; left:5%;width: 90%; height:90%; background: rgba(7, 32, 36,0.5); overflow: hidden; box-shadow: 0px 0px 15px rgba(255,255,255,0.75);}
+        .container .clock div ul li{width:25%; height: 25%;list-style-type: none;color:rgba(255,255,255,0.2);font-size: 3vw; float: left;text-align: center;line-height: 8vw;}
+
+        .container .clock div.left{float:left;}
+        .container .clock div.left ul.hour{;}
+        .container .clock div.left ul.hour li{;}
+
+        .container .clock div.right{float:right;}
+        .container .clock div.right ul.minute{;}
+		</style>
+		<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="clock">
+					<div class="left">
+						<ul class="hour">
+							<li>한</li>
+							<li>두</li>
+							<li>세</li>
+							<li>네</li>
+							<li>다</li>
+							<li>여</li>
+							<li>일</li>
+							<li>여</li>
+							<li>아</li>
+							<li>열</li>
+							<li>곱</li> <!--11/7-->
+		          <li>섯</li> <!--12/6-->
+							<li>홉</li> <!--13/9-->
+							<li>덟</li> <!--14/8-->
+							<li class="active_fix">시</li>
+						</ul><!--hour end-->
+					</div><!--left end-->
+					<div class="right">
+						<ul class="minute">
+							<li>이</li>
+							<li>삼</li>
+							<li>사</li>
+							<li>오</li>
+							<li>십</li>
+							<li>일</li>
+							<li>이</li>
+							<li>삼</li>
+							<li>사</li>
+							<li>오</li>
+							<li>육</li>
+							<li>칠</li>
+							<li>팔</li>
+							<li>구</li>
+							<li>십</li>
+							<li class="active_fix">분</li>
+						</ul><!--minute end-->
+					</div><!--right end-->
+			</div><!--clock end-->
+		</div><!--container end-->
+		<script>
+		$(document).ready(function () {
+        var clock_hour = $('.hour');
+        var clock_minute = $('.minute');
+
+
+		clock();
+        setInterval(clock,60000);
+
+
+        //효과 활성 & 비활성 정의
+        function reset_active(){
+          $(clock_hour).children().removeClass("active");
+          $(clock_minute).children().removeClass("active");
+        }
+        function set_hour_active(hour){
+			$(clock_hour).children().eq(hour-1).addClass("active");
+		}
+		function set_minute_active(minute){
+			$(clock_minute).children().eq(minute-1).addClass("active");
+		}
+
+
+
+
+        function clock(){
+          var hour = new Date().getHours();
+          // 12시간제로 변경
+		  hour = hour % 12;
+		  hour = hour ? hour : 12; // 0 => 12
+
+          var minute = new Date().getMinutes();
+          
+          reset_active();
+          console.log(hour);
+
+/************************ 시간세팅 ***********************/
+					  //1 2 3 4
+			          if(hour<5){
+						set_hour_active(hour);
+			          }
+			          //5
+			          else if(hour = 5){
+						set_hour_active(hour);
+						set_hour_active(hour+7);
+					  }
+					  //6 7 8 9
+					  else if(hour>5 && hour<10){
+						var flag = hour%2;
+						if(flag = 0){
+							set_hour_active(hour);
+							set_hour_active(hour+6);
+						}else{
+							set_hour_active(hour);
+							set_hour_active(hour+4);
+						}
+
+					  }
+					  //10
+			          else if(hour=10){
+			            set_hour_active(hour);
+			          }
+			  		  
+	 				  //11 12
+					  else if(hour>10){
+						hour_one = hour-10;
+						hour = 10;
+						set_hour_active(hour_one);
+						set_hour_active(hour);
+					  }
+					  
+
+/*********************** 분 세팅 ***********************/
+				if(minute>10){
+					var minute_ten = parseInt(minute/10);
+					var minute_one = (minute%10)+5;
+					 console.log(minute);
+					 console.log(minute_ten);
+					 console.log(minute_one);
+					if(minute_ten>=1){
+						//10분단위 세팅
+						set_minute_active(minute_ten-1);
+						console.log("십단위 -1");
+						set_minute_active(5);
+						console.log("십단위 5")
+
+						set_minute_active(minute_one);
+					}else{
+						//1분단위 세팅
+						set_minute_active(minute_one);
+					}
+				}else{
+					//1분단위 세팅
+					set_minute_active(minute+5);
+				}
+			}
+		});
+		</script>
+	</body>
+</html>
