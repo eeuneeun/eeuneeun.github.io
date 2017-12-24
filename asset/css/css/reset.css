@@ -31,3 +31,5 @@ hr{display:none}
 legend{*width:0}
 table{border-collapse:collapse;border-spacing:0}
 input::-ms-clear{display:none}
+
+.inner{width: 85%; max-width: 1200px; margin: 0 auto;
