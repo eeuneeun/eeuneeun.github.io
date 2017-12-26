@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>부정 가상 클래스 : not(s)</title>
+</head>
+<style>
+    div{border: 1px salmon solid;}
+    div:last-child{border: 2px lime solid;}
+    li:nth-of-type(2){border: 3px blueviolet solid;}
+</style>
+<body>
+    <div>
+        부모 div
+        <div>
+            자식 div
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
