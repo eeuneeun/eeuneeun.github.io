@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[CSS3] 부정 가상 클래스 : not(s)</title>
+</head>
+<style>
+    div{border: 1px salmon solid;}
+    
+    dd{display: none;}
+    dd:target{display:block;border: 1px saddlebrown solid;}
+    
+    
+</style>
+<body>
+    <div class="defin">
+        <h1>[CSS3] 타깃 가상 클래스 : target</h1>
+        <div>
+            [동일 계층 내 조건] "타깃이 된 요소", 즉 페이지 내의 점프링크를 클릭했을 때 점프처의 요소에 CSS를 적용할 수 있게 하는 것이 타깃 가상 클래스다. 타깃 가상 클래스는 여러 용도에 사용되는데 여기서는 html 소스에 menu를 클릭하면 링크처의 dd가 열리는 스타일을 설정해 보았다.
+            <br>
+            dd:target{display:block;border: 1px saddlebrown solid;}
+    
+        </div>
+    </div>
+    <div>
+        부모 div
+            <dt><a href="#menu1">menu1</a></dt>
+            <dd id="menu1">열리는 1번 메뉴</dd>
+
+            <dt><a href="#menu2">menu2</a></dt>
+            <dd id="menu2">열리는 2번 메뉴</dd>
+            
+            <dt><a href="#menu3">menu3</a></dt>
+            <dd id="menu3">열리는 3번 메뉴</dd>
+            
+            <dt><a href="#menu4">menu4</a></dt>
+            <dd id="menu4">열리는 4번 메뉴</dd>
+        </dl>
+        </div>
+    </div>
+</body>
+</html>

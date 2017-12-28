@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>[CSS3] new selecter foo end</title>
+    <title>[CSS3] 속성 선택자 "~" 문자열로 끝나는</title>
 </head>
 <style>
     div[class^="euneun"]{border: 1em solid red; padding: 1em;}
     div[class$="0"]{border: 1em solid blue; padding: 1em;}
 </style>
 <body>
+    <h1>[CSS3] 속성 선택자 "~" 문자열로 끝나는</h1>
+    <div>
+        E[foo$="~"]{;}
+    </div>
    <div class="euneun_010">euneun_010</div> 
    <div class="euneun_020">euneun_020</div> 
    <div class="euneun_03">euneun_03</div>

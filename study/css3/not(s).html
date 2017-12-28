@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>부정 가상 클래스 : not(s)</title>
+    <title>[CSS3] 부정 가상 클래스 : not(s)</title>
 </head>
 <style>
     div{border: 1px salmon solid;}
     div:last-child{border: 2px lime solid;}
-    li:nth-of-type(2){border: 3px blueviolet solid;}
+    .not li:not(:last-child){border:3px orange solid;}
+    
+    
 </style>
 <body>
+    <div class="defin">
+        <h1>[CSS3] 부정 가상 클래스 : not(s)</h1>
+        <div>[동일 계층 내 조건] :not(s)는 s로 지정한 선택자의 대상이 되는 것 이외를 선택하는 가상 클래스다.
+            .not li:not(:last-child){border:1px orange solid;}
+        </div>
+    </div>
     <div>
         부모 div
         <div>
             자식 div
-            <ul>
+            <ul class="not">
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
                 <li>4</li>
+
+                <!-- <span>span</span>
+                <li>5</li> -->
             </ul>
         </div>
     </div>
