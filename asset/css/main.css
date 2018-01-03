@@ -1,4 +1,4 @@
-.header{width: 100%; height: 170px;	background: url("/asset/img/gnb.png") 0 0 no-repeat; background-size: 100% 100%; position: fixed; top: 0;z-index: 999;}
+.header{width: 100%; height: 170px;	background: url("../img/gnb.png") 0 0 no-repeat; background-size: 100% 100%; position: fixed; top: 0;z-index: 999;}
 .header h1.logo{width: 55px; height: 56px; margin: 20px auto;}
 .header ul.gnb{width: 100%;}
 .header ul.gnb li{display: inline;}
@@ -8,9 +8,36 @@
 
 
 .container{width: 100%; position: relative;}
-.container section{width: 100%; height: 1150px; border: 1px solid #000;}
-.container #main{ width: 100%; height: 1150px;background: url("/asset/img/main.png") 0 0 no-repeat; background-size: 100% 100%;}
+.container section{width: 100%; height: 1150px; border: 1px solid #000; margin-top:110px;}
 
+/*section01 main*/
+.container #main{ width: 100%; height: 1150px;background: url("../img/main.png") 0 0 no-repeat; background-size: 100% 100%;}
+    .container #main h1, h5{ color: #000; margin: 100px auto; text-align: center; font-size: 10px; letter-spacing: 14px; line-height: 25px;}
+    .container #main>h1 em{font-size:40px;}
+    .container #main>h5{margin: -50px; font-size: 15px; line-height: 35px;}
+
+    .container #main ul.main_box{width: 70%; height: 300px; display: flex; margin:0 auto; margin-top: 100px; flex-direction: row;  align-items:center; justify-content: space-around;}
+        .container #main ul.main_box li {width: 30%; height:0; padding-top: 30%; border: 1px solid snow; position: relative}
+            .container #main ul.main_box li>div{width:100%; height:100%;position: absolute; top:0; left: 0; background: rgba(49, 43, 59,0.7); }
+            .container #main ul.main_box li>div>h5{color: #fff; line-height: 20px; margin: 0; font-size: 15px; letter-spacing: 0px; font-weight: normal; margin-top:30px;}
+
+
+
+/*section02 profile*/
+.container #profile{ width: 100%; height: 1150px; background: greenyellow;}
+
+
+/*section03 portfolio*/
+.container #portfolio{ width: 100%; height: 1150px; background: greenyellow;}
+
+/*section04 study*/
+.container #study{ width: 100%; height: 1150px; background: greenyellow;}
+
+/*section05 blog*/
+.container #blog{ width: 100%; height: 1150px; background: greenyellow;}
+
+/*section05 contact*/
+.container #contact{ width: 100%; height: 1150px; background: greenyellow;}
 
 
 
