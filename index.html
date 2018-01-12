@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, maximum-scale=1">
@@ -8,30 +9,92 @@
 	<link rel="icon" href="./favicon.ico" type="image/x-icon">
 
 	<link rel="stylesheet" type="text/css" href="./asset/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./asset/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="./asset/css/main.css">
 
+	<!--fontawesome-->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
 
+	<!-- JS Script -->
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="./asset/js/scrolla.jquery.min.js"></script>
 
+	<script>
+		// $.fn.extend({
+		// 	animateCss: function (animationName, callback) {
+		// 		var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+		// 		this.addClass('animated ' + animationName).one(animationEnd, function () {
+		// 			$(this).removeClass('animated ' + animationName);
+		// 			if (callback) {
+		// 				callback();
+		// 			}
+		// 		});
+		// 		return this;
+		// 	}
+		// });
+
+	</script>
 
 	<title>웹 개발자 원은재</title>
 </head>
+
 <body>
+	<!-- *anmite.css 
+		<div class="animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.1s" data-offset="100">
+	-->
+
+
+
+
+
 	<!-- header start -->
 	<div class="header">
 		<!-- inner start -->
 		<div class="inner">
 
-			<h1 class="logo"><a href="#header"><img src="./asset/img/logo.png" alt="logo" /></a></h1>
+			<!-- <svg class="logo" width="23px" height="23px" viewBox="0 0 23 23">
+				<g fill="none" fill-rule="evenodd">
+					<path d="M11.2498,1.1196 C8.6008,1.2446 6.1078,2.3466 4.2308,4.2246 C0.0838,8.3726 0.0838,15.1226 4.2308,19.2706 C8.3778,23.4186 15.1268,23.4186 19.2728,19.2706 C23.2878,15.2556 23.4178,8.8026 19.6598,4.6316 L12.1418,12.1496"
+					 id="smallLogo" stroke="#20303C"></path>
+				</g>
+			</svg>
+
+			<svg class="menu-button" width="25px" height="25px" viewBox="0 0 25 25">
+				<g stroke-width="1" fill-rule="evenodd">
+					<polygon points="0 1 24 1 24 0 0 0"></polygon>
+					<polygon points="0 13 24 13 24 12 0 12"></polygon>
+				</g>
+			</svg> -->
+
+			<h1 class="logo animated swing">
+				<a href="#header">
+					<img src="./asset/img/logo-white.png" alt="logo" />
+				</a>
+			</h1>
+
 			<ul class="gnb">
-	            <li><a href="#profile">PROFILE</a></li>
-	            <li><a href="#portfolio">PORTFOLIO</a></li>
-	            <li><a href="#study">STUDY</a></li>
-	            <li><a href="#blog">BLOG</a></li>
-	            <li><a href="#contact">CONTACT</a></li>
-	        </ul>
-		
-		</div><!--inner end-->
-	</div><!-- header end -->
+				<li>
+					<a href="#profile">PROFILE</a>
+				</li>
+				<li>
+					<a href="#portfolio">PORTFOLIO</a>
+				</li>
+				<li>
+					<a href="#study">STUDY</a>
+				</li>
+				<li>
+					<a href="#blog">BLOG</a>
+				</li>
+				<li>
+					<a href="#contact">CONTACT</a>
+				</li>
+			</ul>
+
+		</div>
+		<!--inner end-->
+	</div>
+	<!-- header end -->
 
 	<!-- container start -->
 	<div class="container">
@@ -39,24 +102,27 @@
 		<!-- main start -->
 		<section id="main">
 			<h1>
-				WEB DVELOPER<br>
+				WEB DVELOPER
+				<br>
 				<em>EUNEUN</em>
 			</h1>
 			<h5>
-				별 사이를 헤엄치는 기분으로,<br>
-				코딩하고 살아가는 사람입니다-
+				별 사이를 헤엄치는 기분으로,
+				<br> 코딩하고 살아가는 사람입니다-
 			</h5>
-			
+
 			<ul class="main_box">
 				<li>
 					<div>
-						<h5>웃음많은 개발자</h5>
+						<i class="fas fa-heartbeat icon"></i>
+						<h5>다정하고 인간적인</h5>
 					</div>
 				</li>
-				
+
 				<li>
 					<div>
-						<h5>디자인하는 개발자</h5>
+						<i class="fas fa-paint-brush icon"></i>
+						<h5>디자인감각이 뛰어난</h5>
 					</div>
 				</li>
 
@@ -64,21 +130,24 @@
 					<div>
 
 						<img src="./asset/img/mainbox-icon2.png" alt="문학하는 개발자 아이콘">
-						<h5>문학하는 개발자</h5>
+						<h5>끊임없이 탐구하는</h5>
 					</div>
 				</li>
 			</ul>
-		</section><!-- main end -->
+		</section>
+		<!-- main end -->
 
 		<!-- profile start -->
 		<section id="profile">
-				"profile"
-		</section><!-- profile end -->
+			"profile"
+		</section>
+		<!-- profile end -->
 
 		<!-- portfolio start -->
 		<section id="portfolio">
-				portfolio
-		</section><!-- portfolio end -->
+			portfolio
+		</section>
+		<!-- portfolio end -->
 
 		<!--study start -->
 		<section id="study">
@@ -93,24 +162,30 @@
 				<li></li>
 				<li></li>
 			</ul>
-		</section><!-- study end -->
+		</section>
+		<!-- study end -->
 
 		<!-- blog start -->
 		<section id="blog">
 			blog
-		</section><!-- blog end -->
+		</section>
+		<!-- blog end -->
 
 		<!-- contact start -->
 		<section id="contact">
 			contact
-		</section><!-- contact end -->
-	</div><!-- container end -->
+		</section>
+		<!-- contact end -->
+	</div>
+	<!-- container end -->
 
-	
+
 	<!-- footer start -->
 	<div class="footer">
-		
-	</div><!-- footer end -->
+
+	</div>
+	<!-- footer end -->
 
 </body>
+
 </html>
