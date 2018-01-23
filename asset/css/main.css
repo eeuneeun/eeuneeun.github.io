@@ -1,5 +1,5 @@
 /*common css*/
-*:target{background: red!important;}
+*:target{background: linear-gradient(-155deg, #4a1070b3, #571c43)!important;}
 
 
 .header{width: 100%; height: 170px;	background: url("../img/gnb.png") 0 0 no-repeat; background-size: 100% 100%; position: fixed; top: 0;z-index: 999;}
@@ -12,17 +12,21 @@
 
 
 .container{width: 100%; position: relative;}
-.container section{width: 100%; height: 1150px; border: 1px solid #000; margin-top:110px;}
+.container section{width: 100%; height: 100%; padding-top:170px;}
+.container section h2 {text-align: center; font-size: 50px;}
+.container section h2 a{font-family: 'Lato', 'LotteMartDream',  AppleGothic, sans-serif, Helvetica;}
+
 
 /*section01 main*/
-.container #main{ width: 100%; height: 1150px;background: linear-gradient(-155deg, #94006f, #a0ccff); background-size: 100% 100%;}
+.container #main{ width: 100%; height: 1150px;background: linear-gradient(-145deg, #94006f, #a0ccff); background-size: 100% 100%;}
     .container #main h1, h5{ color: #000; margin: 100px auto; text-align: center; font-size: 10px; letter-spacing: 14px; line-height: 25px;}
+    .container #main>h1 span{font-size: 10px;}
     .container #main>h1 em{font-size:40px;}
     .container #main>h5{margin: -50px; font-size: 15px; line-height: 35px;}
 
     .container #main ul.main_box{width: 50%; height: 300px; display: flex; margin:0 auto; margin-top: 120px; flex-direction: row;  align-items:center; justify-content: space-around;}
         .container #main ul.main_box li {width: 30%; height:0; padding-top: 30%; position: relative}
-            .container #main ul.main_box li>div{width:100%; height:100%;position: absolute; top:0; left: 0; background: linear-gradient(-155deg, #4a1070b3, #571c43);; text-align: center; padding-top: 50px;}
+            .container #main ul.main_box li>div{width:100%; height:100%;position: absolute; top:0; left: 0; background: linear-gradient(-155deg, #4a1070b3, #571c43); text-align: center; padding-top: 50px;}
             .container #main ul.main_box li>div>h5{color: #fff; line-height: 20px; margin: 0; font-size: 15px; letter-spacing: 5px; font-weight: normal; margin-top:60px;}
 
             .container #main ul.main_box li div .icon{font-size: 40px;}
@@ -30,17 +34,34 @@
 
 
 /*section02 profile*/
-.container #profile{ width: 100%; height: 1150px; background: greenyellow;}
-
+.container #profile{ width: 100%; height: 1150px;background: linear-gradient(-5deg, #94006f, #a0ccff);}
+    .container #profile .profile-wrap{width: 100%;}
+        .container #profile .profile-wrap h5{font-size: 30px;text-align: center;}
+        .container #profile .profile-wrap .career{width: 80%; margin: 0 auto;}
+        .container #profile .profile-wrap .career .career-item{width:50%; border: 1px solid #fff; border-radius: 5px; margin:15px; padding: 10px;}
 
 /*section03 portfolio*/
 .container #portfolio{ width: 100%; height: 1150px; background: greenyellow;}
+.container #portfolio {;}
+
+
 
 /*section04 study*/
 .container #study{ width: 100%; height: 1150px; background: greenyellow;}
+.container #study ul{width: 80%; margin: 0 auto;}
+.container #study ul li{width: 28%; height: 0; padding-bottom: 25%; background: rgba(43, 255, 227,0.6); float: left; margin: 1em;text-align: center;}
+.container #study ul li:hover{ background: rgba(43, 255, 227,0.9);}
+.container #study ul li a{font-size: 20px; font-weight: 500;}
+
+
+
+
 
 /*section05 blog*/
 .container #blog{ width: 100%; height: 1150px; background: greenyellow;}
+    .container #blog h2 a{font-size: 50px;}    
+    .container #blog h2 a em{font-size: 100px;}    
+
 
 /*section05 contact*/
 .container #contact{ width: 100%; height: 1150px; background: greenyellow;}

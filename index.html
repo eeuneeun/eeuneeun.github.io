@@ -19,6 +19,8 @@
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<script src="./asset/js/scrolla.jquery.min.js"></script>
+	<script src=""></script>
+
 
 	<script>
 		// $.fn.extend({
@@ -33,7 +35,12 @@
 		// 		return this;
 		// 	}
 		// });
-
+		$(function() {
+			$(window).resize(function(){
+				var h = $( window ).height();
+				$("section").css("height",h+"px");
+			});
+		});
 	</script>
 
 	<title>웹 개발자 원은재</title>
@@ -102,7 +109,7 @@
 		<!-- main start -->
 		<section id="main">
 			<h1>
-				WEB DVELOPER
+				<span>WEB DEVELOPER</span>
 				<br>
 				<em>EUNEUN</em>
 			</h1>
@@ -116,6 +123,7 @@
 					<div>
 						<i class="fas fa-heartbeat icon"></i>
 						<h5>다정하고 인간적인</h5>
+						<span></span>
 					</div>
 				</li>
 
@@ -139,13 +147,52 @@
 
 		<!-- profile start -->
 		<section id="profile">
-			"profile"
+			<h2>PROFILE</h2>
+
+			<!--profile-wrap start-->
+			<div class="profile-wrap">
+				<h5>WON EUN JAE</h5>
+
+				<div class="career">
+					<dl class="career-item">
+						<dt>엔느웨이 여성의류 쇼핑몰</dt>
+						<dd>2008.02 ~ 2014.06</dd>
+						<dd>웹 디자인 & 사이트 관리 & 퍼블리싱 & 자바스크립트 코딩</dd>
+					</dl>
+
+					<dl class="career-item">
+						<dt>대한주택관리사 협회 통합홈페이지 구축 프로젝트</dt>
+						<dd>2017.04 ~ 2017.09</dd>
+						<dd>시안 디자인 & 반응형 프론트엔드 코딩</dd>
+					</dl>
+
+					<dl class="career-item">
+						<dt>YBM 국정 전자 교과서 제작 프로젝트</dt>
+						<dd>2017.10 ~ 2017.11</dd>
+						<dd>조판 디자인 & 시안 디자인 & 퍼블리싱 코딩 </dd>
+					</dl>
+				</div>
+
+			</div>
+			<!--profile-wrap end-->
+
+
 		</section>
 		<!-- profile end -->
 
 		<!-- portfolio start -->
 		<section id="portfolio">
-			portfolio
+
+
+			<h2>PORTFOLIO</h2>
+			<ul>
+				<li>
+					<a href="http://sacroo89.dothome.co.kr"></a>
+				</li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 		</section>
 		<!-- portfolio end -->
 
@@ -153,7 +200,7 @@
 		<section id="study">
 			<ul>
 				<li>
-					<a href="./study/clock/clock.html">한글시계 : JAVA SCRIPT</a>
+					<a href="http://sacroo89.dothome.co.kr/clock/clock.html">한글시계 : JAVA SCRIPT</a>
 				</li>
 				<li>
 					<a href="./study/css3/study_css3_index.html">CSS3</a>
@@ -167,7 +214,12 @@
 
 		<!-- blog start -->
 		<section id="blog">
-			blog
+			<h2>
+				<a href="https://blog.naver.com/sacroo/">Blog
+					<em>.
+						<em>
+				</a>
+			</h2>
 		</section>
 		<!-- blog end -->
 
